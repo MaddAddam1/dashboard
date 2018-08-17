@@ -5,5 +5,5 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import IndecisionApp from './Indecision'
 
-ReactDOM.render(<IndecisionApp />, document.getElementById('root'));
+ReactDOM.render(<IndecisionApp options={['Devil\'s Den', 'Second District']} />, document.getElementById('root'));
 registerServiceWorker();
