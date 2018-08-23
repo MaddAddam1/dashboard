@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { ReactDOM } from 'react-dom';
 
+import OptionModal from './ModalOption';
+
 
 class IndecisionApp extends Component{
     constructor(props){
@@ -9,6 +11,7 @@ class IndecisionApp extends Component{
         this.state = {
 
             options: props.options,
+            selectedOption: undefined
 
         };
     }
@@ -37,8 +40,10 @@ class IndecisionApp extends Component{
 //-----
     handlePick = () => {
         const randNum = Math.floor(Math.random() * this.state.options.length);
-        const pick = this.state.options[randNum];
-        alert(pick);
+        const option = this.state.options[randNum];
+        this.setState(() => ({
+            selectedOption: option
+        }))
     }
 //-----
     addOption = (option) => {
@@ -57,6 +62,10 @@ class IndecisionApp extends Component{
             options: prevState.options.filter((option) => optionToRemove !== option)
         }));
     }
+
+    handleOptionModal = () => {
+        this.setState(() => ({ selectedOption: undefined }))
+    }
 //----------------------------------------------------------------------------------
     render () {
         const subtitle = 'Put your life in the hands of a computer';
@@ -74,6 +83,10 @@ class IndecisionApp extends Component{
                 />
 
                 <AddOption addOption={this.addOption} />
+                <OptionModal
+                    handleOptionModal={this.handleOptionModal}
+                    selectedOption={this.state.selectedOption}
+                />
             </div>
         );
     }
