@@ -73,20 +73,22 @@ class IndecisionApp extends Component{
         return (
             <div style={{margin: 10}}>
                 <Header subtitle={subtitle}/>
+                <div className="container">
+                
+                    <Action hasOptions={this.state.options.length > 0} handlePick={this.handlePick}/>
 
-                <Action hasOptions={this.state.options.length > 0} handlePick={this.handlePick}/>
+                    <Options 
+                    options={this.state.options}
+                    handleDeleteOptions={this.deleteOptions}
+                    handleDeleteOption={this.handleDeleteOption} 
+                    />
 
-                <Options 
-                options={this.state.options}
-                handleDeleteOptions={this.deleteOptions}
-                handleDeleteOption={this.handleDeleteOption} 
-                />
-
-                <AddOption addOption={this.addOption} />
-                <OptionModal
-                    handleOptionModal={this.handleOptionModal}
-                    selectedOption={this.state.selectedOption}
-                />
+                    <AddOption addOption={this.addOption} />
+                    <OptionModal
+                        handleOptionModal={this.handleOptionModal}
+                        selectedOption={this.state.selectedOption}
+                    />
+                </div>
             </div>
         );
     }
@@ -99,9 +101,11 @@ IndecisionApp.defaultProps = {
 const Header = (props) => {
         return (
         
-            <div style={{margin: 10}}>
-                <h1>{props.title}</h1>
-                {props.subtitle && <h2>{props.subtitle}</h2> }       
+            <div className="header">
+                <div className="container">
+                    <h1 className="header__title">{props.title}</h1>
+                    {props.subtitle && <h2 className="header__subtitle">{props.subtitle}</h2> }
+                </div>       
             </div>
         );
 }
@@ -116,7 +120,7 @@ const Action = (props) => {
         return (
         
             <div style={{margin: 10}}>
-                <button
+                <button className="todo__button"
                 onClick={props.handlePick}
                 disabled={!props.hasOptions}>What should I do?</button>       
             </div>           
