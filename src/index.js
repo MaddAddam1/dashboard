@@ -1,12 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'normalize.css/normalize.css';
-import registerServiceWorker from './registerServiceWorker';
-import IndecisionApp from './components/Indecision';
+import { Provider } from 'react-redux';
+import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
+import AppRouter from './routers/AppRouter';
+import configureStore from './store/configureStore';
+import { addExpense } from './actions/expenses';
+import { setTextFilter } from './actions/filters';
+import getVisibleExpenses from './selectors/expenses';
 
+const store = configureStore();
 
-import './styles/style.css';
-// import 'bootstrap/dist/css/bootstrap.css';
+store.dispatch(addExpense({description: 'Water Bill'}));
+store.dispatch(addExpense({description: 'Gas Bill'}));
+store.dispatch(setTextFilter('bill'));
 
-ReactDOM.render(<IndecisionApp options={['Devil\'s Den', 'Second District']} />, document.getElementById('root'));
-registerServiceWorker();
+const state = store.getState();
+const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
+
+console.log(visibleExpenses);
+
+const jsx = (
+    <AppRouter />
+)
+
+ReactDOM.render(jsx, document.getElementById('root'));
