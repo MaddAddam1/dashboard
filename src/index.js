@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/configureStore';
-import AppBar from './components/AppBar';
+import MenuAppBar from './components/AppBar';
 import ScriptSteps from './components/ScriptSteps';
 import { Provider } from 'react-redux';
 import 'normalize.css/normalize.css'
@@ -16,4 +16,4 @@ const jsx = (
     </Provider>
 )
 
-ReactDOM.render(<ScriptSteps / >, document.getElementById('root'));
+ReactDOM.render(jsx, document.getElementById('root'));

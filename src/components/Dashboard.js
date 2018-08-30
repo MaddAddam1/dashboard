@@ -1,17 +1,23 @@
 import React from 'react';
-import Navigation from './NavBar';
 import ContentBody from './Content';
 import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
-import AppBar from './AppBar';
+import MenuAppBar from './AppBar';
 import ScriptSteps from './ScriptSteps';
+import { Grid, Backdrop } from '@material-ui/core';
+import SideDrawer from './SideDrawer';
+
 
 const Dashboard = () => (
 
-    <div>
-        <AppBar />
-        <Navigation />
-        <ContentBody />
-        <ScriptSteps />
+    <div style={{height: '100%'}}>
+
+        <MenuAppBar />
+        <SideDrawer /> 
+        <Backdrop />
+        <main style={{marginTop: '64px'}}>
+            Content
+        </main>
+
     
     </div>
 );

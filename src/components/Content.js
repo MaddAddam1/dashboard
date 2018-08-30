@@ -3,8 +3,8 @@ import ScriptSteps from './ScriptSteps';
 
 const ContentBody = () => (
 
-    <div>
-        <ScriptSteps/>
+    <div className="content-body">
+        Scripts and their content will go here
     </div>
 
 

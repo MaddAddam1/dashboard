@@ -3,31 +3,21 @@ import AppBar from './AppBar';
 import EditScript from './EditScript';
 import AddScript from './AddScript';
 import CreateScript from './CreateScript';
-import {BrowserRouter, Route, Switch, Link, appLink} from 'react-router-dom';
-import DrawerToggle from './DrawerToggle';
+import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
 
 
-const MenuAppBar = (props) => (
+const SideDrawer = (props) => (
 
-        <header className="app-header">
-            <nav className="app">
-                <div>
-                  <DrawerToggle />
-                </div>
-                <div className="app__logo">Epic Script Testing</div>
-                <div className="spacer"></div>
-                <div className="app__items">
-                    <ul>
-                        <li><Link to="/" style={{textDecoration: 'none'}}>Home</Link></li>
-                        <li><Link to="/profile" style={{textDecoration: 'none'}}>Profile</Link></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-
+  <nav className="side-drawer">
+      <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/create">Create Script</Link></li>
+          <li><Link to="/edit">Edit Script</Link></li>
+      </ul>
+  </nav>
 );
 
-export default MenuAppBar;
+export default SideDrawer;
 
 // import React from 'react';
 // import PropTypes from 'prop-types';
@@ -111,7 +101,7 @@ export default MenuAppBar;
 //   },
 // });
 
-// class appigation extends React.Component {
+// class Navigation extends React.Component {
 //   state = {
 //     open: false,
 //   };
@@ -173,9 +163,9 @@ export default MenuAppBar;
 //   }
 // }
 
-// appigation.propTypes = {
+// Navigation.propTypes = {
 //   classes: PropTypes.object.isRequired,
 //   theme: PropTypes.object.isRequired,
 // };
 
-// export default withStyles(styles, { withTheme: true })(appigation);
+// export default withStyles(styles, { withTheme: true })(Navigation);
