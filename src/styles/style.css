@@ -16,14 +16,3 @@ button:disabled {
 
 .is-active {
   font-weight: bold; }
-
-.app-bar {
-  background: black;
-  color: pink;
-  margin: 0; }
-
-.nav-bar {
-  background: #e40b0b;
-  color: blue;
-  max-width: 20rem;
-  height: 99rem; }
