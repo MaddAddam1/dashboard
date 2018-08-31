@@ -12,7 +12,7 @@ const MenuAppBar = (props) => (
         <header className="app-header">
             <nav className="app">
                 <div>
-                  <DrawerToggle />
+                  <DrawerToggle click={props.drawerClickHandler}/>
                 </div>
                 <div className="app__logo">Epic Script Testing</div>
                 <div className="spacer"></div>

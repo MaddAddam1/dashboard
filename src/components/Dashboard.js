@@ -3,23 +3,50 @@ import ContentBody from './Content';
 import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
 import MenuAppBar from './AppBar';
 import ScriptSteps from './ScriptSteps';
-import { Grid, Backdrop } from '@material-ui/core';
+
 import SideDrawer from './SideDrawer';
+import Backdrop from './Backdrop';
 
 
-const Dashboard = () => (
+class Dashboard extends React.Component {
 
-    <div style={{height: '100%'}}>
+    state = {
+        sideDrawerOpen: false
+    };
 
-        <MenuAppBar />
-        <SideDrawer /> 
-        <Backdrop />
-        <main style={{marginTop: '64px'}}>
-            Content
-        </main>
+    drawerToggleClickHandler = () => {
+        this.setState((prevState) => {
+            return {sideDrawerOpen: !prevState.sideDrawerOpen}
+        });
+    };
 
+    backdropCLickHandler = () => {
+        this.setState({sideDrawerOpen: false})
+    }
+
+    render() {
+
+        let backdrop;
+
+        if (this.state.sideDrawerOpen) {
+            backdrop = <Backdrop click={this.backdropCLickHandler}/>;
+        }
+
+        return (
+
+            <div style={{height: '100%'}}>
+
+                    <MenuAppBar drawerClickHandler={this.drawerToggleClickHandler}/>
+                    <SideDrawer show={this.state.sideDrawerOpen}/>
+                    {backdrop}
+                    <main style={{marginTop: '64px'}}>
+                        Content
+                    </main>
+                </div>
+
+        );
+    }
     
-    </div>
-);
+};
 
 export default Dashboard;

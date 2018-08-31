@@ -6,17 +6,23 @@ import CreateScript from './CreateScript';
 import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
 
 
-const SideDrawer = (props) => (
+const SideDrawer = (props) => {
+    let drawerClasses = 'side-drawer';
 
-  <nav className="side-drawer">
-      <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/create">Create Script</Link></li>
-          <li><Link to="/edit">Edit Script</Link></li>
-      </ul>
-  </nav>
-);
+    if (props.show) {
+        drawerClasses = 'side-drawer open';
+    }
 
+  return (
+    <nav className={drawerClasses}>
+        <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/create">Create Script</Link></li>
+            <li><Link to="/edit">Edit Script</Link></li>
+        </ul>
+    </nav>
+    );
+};
 export default SideDrawer;
 
 // import React from 'react';

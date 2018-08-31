@@ -53,3 +53,9 @@
 .spacer {
    flex: 1;
 }
+
+@media (max-width: 768px) {
+    .app__items {
+        display: none;
+    }
+}
