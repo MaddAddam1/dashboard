@@ -65,14 +65,50 @@ button:disabled {
 .spacer {
   flex: 1; }
 
+@media (max-width: 768px) {
+  .app__items {
+    display: none; } }
+
 .content-body {
-  background: blue;
+  background: #a5afd7;
   color: white;
-  width: 132rem;
-  height: 63rem;
-  position: relative;
-  border: 2px solid black;
-  left: 20rem; }
+  border: 1px solid black;
+  margin: auto;
+  height: 92%;
+  width: 100%; }
+
+.paper-container {
+  background: white;
+  height: 43rem;
+  padding: 3rem;
+  box-shadow: 2px;
+  display: flex;
+  margin: 1.2rem 2rem 0 2rem;
+  flex-flow: row wrap; }
+
+.content-body p {
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+  margin: auto;
+  padding: 2rem; }
+
+.script-steps-card {
+  background: white;
+  padding: 3rem;
+  height: 8rem;
+  display: flex;
+  margin: 5rem 2rem 0 2rem; }
+
+.body-card-button-pass {
+  color: white;
+  background: green;
+  left: 128rem; }
+
+.body-card-button-fail {
+  color: white;
+  background: red;
+  left: 130rem; }
 
 .dash-content {
   background: green;
@@ -111,7 +147,7 @@ button:disabled {
   max-width: 400px;
   z-index: 200;
   transform: translateX(-100%);
-  transition: transform 0.3s ease-out; }
+  transition: transform 0.2s ease-in-out; }
 
 .side-drawer.open {
   transform: translateX(0); }

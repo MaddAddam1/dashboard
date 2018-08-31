@@ -1,10 +1,46 @@
 .content-body {
-    background: blue;
+    background: $off-white;
     color: white;
-    width: 132rem;
-    height: 63rem;
-    position: relative;
-    border: 2px solid black;
-    left: 20rem
+    border: 1px solid black;
+    margin: auto;
+    height: 92%;
+    width: 100%;
+ 
+}
+.paper-container {
+    background: white;
+    height: 43rem;
+    padding: 3rem;
+    box-shadow: 2px;
+    display: flex;
+    margin: 1.2rem 2rem 0 2rem;
+    flex-flow: row wrap;
+}
 
+.content-body p {
+ 
+    font-size: 1.5rem;
+    color:black;
+    text-decoration: none;
+    margin: auto;
+    padding: 2rem;
+}
+
+.script-steps-card {
+    background: white;
+    padding: 3rem;
+    height: 8rem;
+    display: flex;
+    margin: 5rem 2rem 0 2rem;
+}
+
+.body-card-button-pass {
+    color: white;
+    background: green;
+    left: 128rem;
+}
+.body-card-button-fail {
+    color: white;
+    background: red;
+    left: 130rem;
 }

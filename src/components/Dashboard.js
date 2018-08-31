@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ContentBody from './Content';
 import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
 import MenuAppBar from './AppBar';
 import ScriptSteps from './ScriptSteps';
-
 import SideDrawer from './SideDrawer';
 import Backdrop from './Backdrop';
 
@@ -33,17 +32,16 @@ class Dashboard extends React.Component {
         }
 
         return (
+            <Fragment>
+                {/* <div style={{height: '100%'}}> */}
 
-            <div style={{height: '100%'}}>
-
-                    <MenuAppBar drawerClickHandler={this.drawerToggleClickHandler}/>
-                    <SideDrawer show={this.state.sideDrawerOpen}/>
-                    {backdrop}
-                    <main style={{marginTop: '64px'}}>
-                        Content
-                    </main>
-                </div>
-
+                        <MenuAppBar drawerClickHandler={this.drawerToggleClickHandler}/> */}
+                        <SideDrawer show={this.state.sideDrawerOpen}/>
+                        {backdrop}
+                        <ContentBody />
+                    
+                {/* </div> */}
+            </Fragment>
         );
     }
     

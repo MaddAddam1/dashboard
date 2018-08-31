@@ -11,3 +11,5 @@ const Profile = () => (
 );
 
 export default Profile;
+
+// render this to Dashboard if clicked, to keep the layout from changing, just change body
