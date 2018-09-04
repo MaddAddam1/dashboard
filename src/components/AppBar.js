@@ -28,4 +28,3 @@ const MenuAppBar = (props) => (
 );
 
 export default MenuAppBar;
-

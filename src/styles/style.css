@@ -53,7 +53,7 @@ button:disabled {
   color: white; }
 
 .app__items li {
-  padding: 5rem;
+  padding: 2rem;
   color: white; }
 
 .app {
@@ -70,9 +70,7 @@ button:disabled {
     display: none; } }
 
 .content-body {
-  background: #a5afd7;
   color: white;
-  border: 1px solid black;
   margin: auto;
   height: 92%;
   width: 100%; }
@@ -115,6 +113,27 @@ button:disabled {
   border: 3px solid black;
   position: relative;
   left: 120px; }
+
+.content-body-container {
+  background: green;
+  border: 3px solid black;
+  position: relative;
+  left: 120px;
+  display: flex; }
+
+.vert-align {
+  top: 0;
+  margin: 0;
+  position: fixed;
+  z-index: 50;
+  display: flex;
+  width: 100%;
+  border: 1px solid black; }
+
+.grid-body-container {
+  background: black;
+  display: flex;
+  height: 100%; }
 
 .toggle-button {
   display: flex;

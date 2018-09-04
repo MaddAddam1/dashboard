@@ -7,6 +7,11 @@ import { Provider } from 'react-redux';
 import 'normalize.css/normalize.css'
 import './styles/style.css';
 import AppRouter from './routers/AppRouter';
+import Dashboard from './components/Dashboard';
+import ButtonAppBar from './components/MaterialAppBar';
+import MaterialTabs from './components/MaterialFooter'
+import MaterialDrawer from './components/MaterialDrawer';
+import MaterialDashboard from './components/MaterialDashboard';
 
 const store = configureStore();
 
@@ -16,4 +21,4 @@ const jsx = (
     </Provider>
 )
 
-ReactDOM.render(jsx, document.getElementById('root'));
+ReactDOM.render(<MaterialDashboard/>, document.getElementById('root'));
