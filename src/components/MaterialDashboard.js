@@ -10,7 +10,6 @@ import UserList from './UserList';
 import Backdrop from './Backdrop';
 import ScriptsList from './ScriptsList';
 import Content from './Content';
-import CreateScript from './CreateScript';
 import DefaultContent from './DefaultContent';
 import ScriptContent from './ScriptContent';
 
@@ -23,6 +22,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
+import AddScript from './AddScript';
 
 
 
@@ -194,7 +194,7 @@ class MaterialDashboard extends React.Component {
                                         <Route path="/script" component={ScriptSteps} exact={true}/>
                                         <Route path="/script" component={ScriptContent} exact={true}/>
                                         <Route path="/" component={DefaultContent} exact={true}/>
-                                        <Route path="/create" component={CreateScript}/>
+                                        <Route path="/create" component={AddScript}/>
                                         <Route path="/scriptslist" component={ScriptsList}/>
                                         <Route path="/userlist" component={UserList}/>
                                     </div>

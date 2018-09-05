@@ -7,7 +7,7 @@ import SideDrawer from './SideDrawer';
 import Backdrop from './Backdrop';
 import ScriptsList from './ScriptsList';
 import Content from './Content';
-import CreateScript from './CreateScript';
+
 import DefaultContent from './DefaultContent';
 import {Row, Col, Container} from 'reactstrap';
 import ButtonAppBar from './MaterialAppBar';
@@ -55,7 +55,7 @@ class Dashboard extends React.Component {
                         
                             <div className="content-body-container">
                                 <div>
-                                <Route path="/create" component={CreateScript}/>
+                             
                                 <Route path="/scriptslist" component={ScriptsList}/>
                                 </div>
                             </div>
