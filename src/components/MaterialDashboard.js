@@ -23,6 +23,8 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import AddScript from './AddScript';
+import ViewScript from './ViewScript'
+import EditScript from './EditScript';
 
 
 
@@ -175,14 +177,19 @@ class MaterialDashboard extends React.Component {
                             <ChevronLeftIcon />
                         </IconButton>
                         </div>
-                        <Divider />
-                        <List>Home</List>
-                        <Divider />
-                        <List>Script List</List>
-                        <Divider />
-                        <List>Recenlty Failed</List>
-                        <Divider />
-                        <List>Users</List>
+                        <BrowserRouter>
+                            <div>
+                                <Divider />
+                                <List><Link to="/">Home</Link></List>
+                                <Divider />
+                                <List><Link to="/scripts">Script List</Link></List>
+                                <Divider />
+                                <List><Link to="/create/script">Create Script</Link></List>
+                                <Divider />
+                                <List>Users</List>
+                            </div>
+                        </BrowserRouter>
+                       
 
                     </Drawer>
                     <main className={classes.content}>
@@ -191,11 +198,11 @@ class MaterialDashboard extends React.Component {
                             <Paper style={style.Paper}>
                                 <BrowserRouter>                            
                                     <div>
-                                        <Route path="/script" component={ScriptSteps} exact={true}/>
-                                        <Route path="/script" component={ScriptContent} exact={true}/>
                                         <Route path="/" component={DefaultContent} exact={true}/>
-                                        <Route path="/create" component={AddScript}/>
-                                        <Route path="/scriptslist" component={ScriptsList}/>
+                                        <Route path="/scripts/:ScriptID" component={ViewScript} exact={true}/>
+                                        <Route path="/edit/script/:ScriptID" component={EditScript} exact={true}/>
+                                        <Route path="/create/script/" component={AddScript}/>
+                                        <Route path="/scripts" component={ScriptsList} exact={true}/>
                                         <Route path="/userlist" component={UserList}/>
                                     </div>
                                 </BrowserRouter>

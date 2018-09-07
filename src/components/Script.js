@@ -1,19 +1,38 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import { Button } from '@material-ui/core';
-import { Link, Router } from 'react-router-dom';
+import { Link, Router} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { removeScript, viewScript } from './../actions/scripts';
+import { removeScript, viewScript, editScript } from './../actions/scripts';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+
+const onClickEdit = (e) => {
+        e.preventDefault();
+        this.props.history.push("/");
+    }
+    
+
+const Script = ({props, dispatch, LastDateModified, ScriptID, ScriptName, CreatedBy, CreatedDate, ScriptDesc}) => (
 
 
-const Script = ({dispatch, ScriptID, ScriptName, CreatedBy, CreatedDate, ScriptDesc}) => (
-
+    
     <div>
-        <Link to={`script/${ScriptID}`}><h3>{ScriptName}</h3></Link> 
-        <h5>Created By: {CreatedBy} ----- Created Date: {CreatedDate}</h5>     
+    
+        <Link to={`/scripts/${ScriptID}`} onClick={() => {
+            dispatch(viewScript({ ScriptID }));
+            
+        }}>
+        
+        <h3>Script Name: {ScriptName}</h3></Link> 
+        <h5>Created by <u>{CreatedBy}</u> on {CreatedDate}</h5> 
+        <h5>Last Modified on {LastDateModified}</h5>     
         <p>{ScriptDesc}</p>
         <button onClick={() => {
             dispatch(viewScript({ ScriptID }));
-            // this.history.push(`script/${ScriptID}`);
+      
         }}
         >View
         </button>
@@ -21,6 +40,11 @@ const Script = ({dispatch, ScriptID, ScriptName, CreatedBy, CreatedDate, ScriptD
             dispatch(removeScript({ ScriptID }));
         }}
         >Remove
+        </button>
+
+
+        <button onClick={this.onClickEdit}
+        >Edit
         </button>
     </div>
 

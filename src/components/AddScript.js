@@ -9,7 +9,7 @@ const AddScript = (props) => (
         <ScriptForm 
             onSubmit={(script) => {
                 props.dispatch(createScript(script));
-                props.history.push(`script/${script.ScriptID}`);
+                props.history.push("/scripts");
                 console.log(script);
             }}
         />

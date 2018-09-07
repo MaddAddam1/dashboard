@@ -11,6 +11,7 @@
     "classnames": "^2.2.6",
     "css-loader": "^1.0.0",
     "dns": "file:./src/mock/dns",
+    "jest": "^23.5.0",
     "material-ui-datatables": "^0.18.2",
     "mdbreact": "^4.7.0",
     "modal": "^1.2.0",

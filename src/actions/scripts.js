@@ -21,6 +21,7 @@ export const createScript = (
         ScriptID: uuid(),
         ScriptName,
         CreatedDate: moment().format('MMMM Do, YYYY : LT'),
+        LastRunDate,
         LastDateFail,
         LastDateModified,
         LastModifiedBy,

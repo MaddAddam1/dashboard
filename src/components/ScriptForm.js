@@ -6,12 +6,18 @@ import uuid from 'uuid';
 
 class ScriptForm extends React.Component {
 
-    state = {
-        ScriptID: uuid(),
-        ScriptDesc: '',
-        ScriptName: '',
-        CreatedDate: moment().format('MMMM Do, YYYY : LT')
-    };
+    constructor(props) {
+        super(props);
+        
+            this.state = {
+                
+                ScriptDesc: props.script ? props.script.ScriptDesc : '',
+                ScriptName: props.script ? props.script.ScriptName : '',
+                LastDateModified: props.script ? moment(props.script.LastDateModified) : moment().format('MMMM Do, YYYY : LT'),
+
+        };
+    }
+    
 
     onScriptNameChange = (e) => {
         const ScriptName = e.target.value;
@@ -33,10 +39,10 @@ class ScriptForm extends React.Component {
             this.setState(() => ({ error: ''}))
             console.log('Script created or edited...')
             this.props.onSubmit({
-                ScriptID: this.state.ScriptID,
+              
                 ScriptName: this.state.ScriptName,
                 ScriptDesc: this.state.ScriptDesc,
-                CreatedDate: this.state.CreatedDate
+                LastDateModified: this.state.LastDateModified
             })
         }
     };
